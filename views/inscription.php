@@ -1,4 +1,4 @@
-<?php include_once "../inc/header.php" ?>
+<?php include_once "../inc/nav_bar.php" ?>
 
 <div class="container">
     <h1>inscription</h1>

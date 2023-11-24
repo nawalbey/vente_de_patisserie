@@ -1,3 +1,23 @@
-.container{
-    background-color: pink;
+h2 {
+  text-decoration: underline;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 5px rgb(223, 14, 136);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.navbar {
+  background-image: url(../img/S44_CremeChocolatMaison.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+nav ul {
+  margin-top: 0px;
+  float: right;
+  margin-right: 50px;
+}
+nav li {
+  display: inline-block;
+  padding: 1px;
 }
