@@ -2,37 +2,36 @@
 
 <div class="container">
     <h1>inscription</h1>
-    <form action="../../jeux_video/model/db_jeuxvideo.php" method="post">
+    <form action="../../vente_de_patisserie/model/db_inscription.php" method="post">
         <div>
             <div class="form-group">
-                <label>nom</label>
+                <label>test</label>
                 <input type="text" class="form-control" name="nom">
             </div>
             <div class="form-group">
-                <label>prenom :</label>
+                <label>prenom</label>
                 <input type="text" class="form-control" name="prenom">
             </div>
 
             <div class="form-group">
-                <label>mot_de_passe :</label>
-                <input type="number" class="form-control" name="number">
+                <label>mot_de_passe</label>
+                <input type="text" class="form-control" name="mot_de_passe">
             </div>
 
             <div class="form-group">
-                <label>adresse :</label>
+                <label>adresse</label>
                 <input type="text" class="form-control" name="adresse">
             </div>
             <div class="form-group">
-                <label>numero_telephone :</label>
+                <label>numero_telephone</label>
                 <input type="number" class="form-control" name="numero_telephone">
             </div>
             <div class="form-group">
-                <label>date de naissance:</label>
+                <label>date de naissance</label>
                 <input type="date" class="form-control" name="date_de_naissance">
             </div>
+ 
         </div>
-
-
         <button type="submit" id="bouton" class="btn btn-primary mt-5 mb-5" name="inscription"
             value="submit">Inscription</button>
     </form>
