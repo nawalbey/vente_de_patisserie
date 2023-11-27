@@ -5,7 +5,7 @@
     <form action="../../vente_de_patisserie/model/db_inscription.php" method="post">
         <div>
             <div class="form-group">
-                <label>test</label>
+                <label>nom</label>
                 <input type="text" class="form-control" name="nom">
             </div>
             <div class="form-group">
