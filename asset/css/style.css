@@ -1,23 +1,72 @@
-h2 {
-  text-decoration: underline;
-  letter-spacing: -2px;
-  text-shadow: 2px 2px 5px rgb(223, 14, 136);
-  font-family: "Courier New", Courier, monospace;
-}
-
-.navbar {
-  background-image: url(../img/S44_CremeChocolatMaison.jpg);
+body {
+  height: 100vh;
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
 }
 
-nav ul {
-  margin-top: 0px;
-  float: right;
-  margin-right: 50px;
+.container {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 630px;
+  margin: 30px;
+  background-position-x: center;
 }
-nav li {
-  display: inline-block;
-  padding: 1px;
+h1 {
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 5px rgb(255, 254, 253);
+  font-family: Georgia, serif;
+  text-decoration: underline;
+}
+.class1 {
+  background-image: url(../img/7d1b95ad42f6fa69abcd978b9947b8cc.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+}
+label {
+  color: rgb(0, 0, 0);
+  padding-top: 25px;
+  font-family: Georgia, serif;
+  height: 60px;
+  text-decoration: underline;
+}
+.button1 {
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+.button1 button {
+  background-color: #3a0701;
+  color: white;
+}
+.button1 button:hover {
+  color: white;
+  background-color: #3a0701;
+}
+.class2 {
+  background-image: url(../img/78574_w1024h768c1cx1728cy2592cxt0cyt0cxb3456cyb5184.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+}
+.button2 button {
+  background-color: #3a0701;
+  color: white;
+}
+.button2 button:hover {
+  color: white;
+  background-color: #3a0701;
+}
+.button2 {
+  text-align: center;
+  font-family: Georgia, serif;
+}
+.form1 {
+  width: 25%;
+  margin-top: 200px;
+  margin-left: 250px;
 }
