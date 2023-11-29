@@ -26,12 +26,12 @@ if (isset($_POST['connexion'])) {
             if (password_verify($password, $userInfo['mot_de_passe'])) {
                 // Si l'utilisateur est un admin
                 if ($userInfo['role'] == "ROLE_ADMIN") {
-                    header("location: http://localhost/jeux_video/admin/admin.php");
+                    header("location: http://localhost/vente_de_patisserie/admin/admin.php");
                 } else {
                     $_SESSION["id"] = $userInfo["id_user"];
                     $_SESSION["nom"] = $userInfo["nom"];
                     $_SESSION["email"] = $userInfo["email"];
-                    header("Location: http://localhost/jeux_video/views/jeuxvideo_list.php");
+                    header("Location: http://localhost/vente_de_patisserie/views/jeuxvideo_list.php");
                 }
             } else {
                 echo "Mot de passe incorrect";

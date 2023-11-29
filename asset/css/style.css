@@ -70,3 +70,35 @@ label {
   margin-top: 200px;
   margin-left: 250px;
 }
+.titre2 {
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 5px rgb(255, 254, 253);
+  font-family: Georgia, serif;
+  text-decoration: underline;
+  text-align: center;
+}
+.button3 button:hover {
+  text-align: right;
+  background-color: #3a0701;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+h2 {
+  margin-left: 700px;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 5px rgb(255, 254, 253);
+  font-family: Georgia, serif;
+  text-decoration: underline;
+ 
+}
+.navbar1 {
+  margin-right: 10px;
+}
+.color1{
+  background-color: #3a0701;
+  color: white;
+}
