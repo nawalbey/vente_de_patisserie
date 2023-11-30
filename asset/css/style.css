@@ -88,17 +88,28 @@ nav {
   padding: 15px;
 }
 h2 {
-  margin-left: 700px;
+  margin-left: 750px;
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
   text-decoration: underline;
+  color: white;
  
 }
 .navbar1 {
   margin-right: 10px;
+  
+
 }
 .color1{
   background-color: #3a0701;
   color: white;
+}
+.color1:hover{
+  background-color: #3a0701;
+  color: white;
+}
+.navbar2{
+ background-color: #3a0701;
+ 
 }
