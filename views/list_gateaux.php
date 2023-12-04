@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once "../inc/nav_bar.php";
-require_once "../model/functions.php";
+require_once "../model/function.php";
 
 ?>
 <div class="container">
@@ -14,46 +14,41 @@ require_once "../model/functions.php";
     <table class="table">
         <thead>
             <tr>
-                <th>Id article</th>
-                <th>nom du jeux</th>
-                <th>n°_du_jeux</th>
+                <th>id gateaux</th>
+                <th>nom du gateaux</th>
                 <th>description</th>
                 <th>prix</th>
                 <th>photo</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($listArticle as $article) { ?>
+            <?php foreach ($listgateaux as $gateaux) { ?>
                     <tr>
 
                         <td>
-                            <?= $article['id_article']; ?>
+                            <?= $gateaux['id_gateaux']; ?>
 
 
                         </td>
                         <td>
-                            <?= $article['nom_du_jeu']; ?>
+                            <?= $gateaux['nom_du_gateaux']; ?>
                         </td>
                         <td>
-                            <?= $article['n_du_jeu']; ?>
+                            <?= $gateaux['description']; ?>
                         </td>
                         <td>
-                            <?= $article['description']; ?>
-                        </td>
-                        <td>
-                            <?= $article['prix']; ?>
+                            <?= $gateaux['prix']; ?>
                         </td>
 
-                        <td>
-                            <a href="/jeux_video/views/detail_jeux.php?id_jeux=<?= $article['id_article']; ?>">
-                                <img src="<?= "../asset/img/" . $article["photo"]; ?>" alt="<?= $article["nom_du_jeu"] ?>" style="width: 150px;">
+                      <!--  <td>
+                            <a href="/jeux_video/views/detail_gateaux?id_jeux=<?= $article['id_gateaux']; ?>">
+                                <img src="<?= "../asset/img/" . $article["photo"]; ?>" alt="<?= $article["nom_du_gateaux"] ?>" style="width: 150px;">
                             </a>
                             <form method="post" action="../inc/nav_bar.php">
                                 <input type="hidden" name="article_id" value="<?= $article['id_article']; ?>">
-                                <button class="bouton" type="submit">achete</button>
                             </form>
 
-                        </td>
+                        </td> -->
                     </tr>
             <?php } ?>
         </tbody>
