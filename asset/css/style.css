@@ -24,6 +24,7 @@ h1 {
   height: 100%;
   padding: 20px;
   width: 100%;
+  position: fixed;
 }
 label {
   color: rgb(0, 0, 0);
@@ -49,9 +50,16 @@ label {
   background-image: url(../img/78574_w1024h768c1cx1728cy2592cxt0cyt0cxb3456cyb5184.jpg);
   background-size: cover;
   background-position: center;
-  height: 91%;
+  height: 93%;
   padding: 20px;
   width: 100%;
+  position: relative;
+  position: fixed;
+}
+.form1 {
+  position: absolute;
+  left: 300px;
+  top: 220px;
 }
 .button2 button {
   background-color: #3a0701;
@@ -64,11 +72,6 @@ label {
 .button2 {
   text-align: center;
   font-family: Georgia, serif;
-}
-.form1 {
-  width: 25%;
-  margin-top: 200px;
-  margin-left: 250px;
 }
 .titre2 {
   letter-spacing: -2px;
@@ -87,8 +90,15 @@ nav {
   justify-content: space-between;
   padding: 15px;
 }
+nav > div {
+  display: flex;
+  width: 25%;
+  justify-content: end;
+}
+nav div:nth-child(2) {
+  justify-content: center;
+}
 h2 {
-  margin-left: 750px;
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
@@ -108,4 +118,54 @@ h2 {
 }
 .navbar2 {
   background-color: #3a0701;
+}
+.class3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60%;
+}
+.body1 {
+  display: flex;
+  background-color: #562528;
+}
+
+.bg-gateau {
+  background-image: url("https://img.freepik.com/photos-premium/gateau-au-chocolat-fraises-dessus_862994-525.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 35% 100%;
+  position: fixed;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  z-index: -3;
+}
+
+.card {
+  margin: 15px 15px;
+}
+
+.card img {
+  height: 300px;
+}
+h5 {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+p {
+  margin-top: 5px;
+}
+.btn {
+  background-color: #562528;
+  color: white;
+}
+.btn:hover {
+  background-color: #562528;
+  color: white;
+}
+.card-text {
+  margin-top: 30px;
+  text-align: center;
 }

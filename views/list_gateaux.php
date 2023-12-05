@@ -40,15 +40,6 @@ require_once "../model/function.php";
                             <?= $gateaux['prix']; ?>
                         </td>
 
-                      <!--  <td>
-                            <a href="/jeux_video/views/detail_gateaux?id_jeux=<?= $article['id_gateaux']; ?>">
-                                <img src="<?= "../asset/img/" . $article["photo"]; ?>" alt="<?= $article["nom_du_gateaux"] ?>" style="width: 150px;">
-                            </a>
-                            <form method="post" action="../inc/nav_bar.php">
-                                <input type="hidden" name="article_id" value="<?= $article['id_article']; ?>">
-                            </form>
-
-                        </td> -->
                     </tr>
             <?php } ?>
         </tbody>
@@ -57,3 +48,4 @@ require_once "../model/function.php";
 
 </div>
 <?php include_once "../inc/footer.php"; ?>
+
