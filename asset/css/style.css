@@ -124,6 +124,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   width: 60%;
+  height: 600px;
 }
 .body1 {
   display: flex;
@@ -165,7 +166,67 @@ p {
   background-color: #562528;
   color: white;
 }
+
+.card {
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.prix_gateau {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  background-color: #562528;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 25px;
+}
 .card-text {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
+}
+.ajout_admin_gateau h1 {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 5px rgb(255, 254, 253);
+  font-family: Georgia, serif;
+  text-decoration: underline;
+  padding-top: 25px;
+}
+.ajout_admin_gateau form {
+  margin: auto;
+  width: 600px;
+}
+.ajout_admin_gateau {
+  background-image: url(../img/pile-brownies-au-chocolat-fond-rose_893012-41532.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 20px;
+  width: 1000px;
+  position: fixed;
+ 
+}
+
+
+.admin_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_flex input[type="submit"] {
+  margin: 20px 0;
+}
+
+.admin_flex label {
+  margin: 3px;
 }
