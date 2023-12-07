@@ -1,8 +1,7 @@
 <?php require_once('../inc/nav_bar.php');
-// if(isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
-//     header("location: /vente_de_patisserie/views/login.php");
-// }
+
 ?>
+
 
 <div class="ajout_admin_gateau">
     <h1>Ajoutez votre gateau ici</h1>
@@ -28,3 +27,4 @@
         </div>
     </form>
 </div>
+

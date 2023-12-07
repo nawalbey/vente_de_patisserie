@@ -18,16 +18,16 @@ h1 {
   text-decoration: underline;
 }
 .class1 {
-  background-image: url(../img/7d1b95ad42f6fa69abcd978b9947b8cc.jpeg);
+  background-image: url(../img/brownie-au-chocolat-filet-caramel-arrose-dessus_919652-2073.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: 50% 80%;
   height: 100%;
-  padding: 20px;
+  padding: 5px;
   width: 100%;
   position: fixed;
 }
 label {
-  color: rgb(0, 0, 0);
+  color: wheat;
   padding-top: 25px;
   font-family: Georgia, serif;
   height: 60px;
@@ -47,7 +47,7 @@ label {
   background-color: #3a0701;
 }
 .class2 {
-  background-image: url(../img/78574_w1024h768c1cx1728cy2592cxt0cyt0cxb3456cyb5184.jpg);
+  background-image: url(../img/c27ce794ab5c57eceb709d973b886011.jpeg);
   background-size: cover;
   background-position: center;
   height: 93%;
@@ -212,9 +212,7 @@ p {
   padding: 20px;
   width: 1000px;
   position: fixed;
- 
 }
-
 
 .admin_flex {
   display: flex;
