@@ -33,11 +33,9 @@
 
             </div>
             <div class="button1">
-                <button type="submit" id="bouton" class="btn  mt-5 mb-5" name="inscription"
-                    value="submit">Inscription</button>
+                <button type="submit" id="bouton" class="btn  mt-5 mb-5" name="inscription" value="submit">Inscription</button>
             </div>
         </form>
     </div>
 </div>
-
 <?php include_once "../inc/footer.php" ?>

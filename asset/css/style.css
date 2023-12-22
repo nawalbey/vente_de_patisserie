@@ -1,8 +1,11 @@
+/* body donner une taille et une largeur 100vh (mode plien ecran)  */
 body {
   height: 100vh;
   width: 100%;
 }
+/* fin du body */
 
+/* debut du container */
 .container {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -11,12 +14,18 @@ body {
   margin: 30px;
   background-position-x: center;
 }
+/* fin du container */
+
+/* debut du h1 */
 h1 {
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
   text-decoration: underline;
 }
+/* fin du h1 */
+
+/* debut de la class1 position fixed pour pas avoir le scroll-behavior*/
 .class1 {
   background-image: url(../img/brownie-au-chocolat-filet-caramel-arrose-dessus_919652-2073.jpg);
   background-size: cover;
@@ -26,6 +35,9 @@ h1 {
   width: 100%;
   position: fixed;
 }
+/* fin de la class1 */
+
+/* debut du label */
 label {
   color: wheat;
   padding-top: 25px;
@@ -33,19 +45,28 @@ label {
   height: 60px;
   text-decoration: underline;
 }
+/* fin du label */
+
+/* debut du button1 */
 .button1 {
   text-align: center;
   font-family: Georgia, serif;
 }
+/* fin du button1 */
 
+/* debut du button1 button */
 .button1 button {
   background-color: #3a0701;
   color: white;
 }
+/* fin du button1 button */
+
+/* debut de la class button1 et button hover le hover quand on passe dessus! */
 .button1 button:hover {
   color: white;
   background-color: #3a0701;
 }
+/* fin de la class */
 .class2 {
   background-image: url(../img/c27ce794ab5c57eceb709d973b886011.jpeg);
   background-size: cover;
@@ -127,7 +148,6 @@ h2 {
   height: 600px;
 }
 .body1 {
-  display: flex;
   background-color: #562528;
 }
 
@@ -135,11 +155,12 @@ h2 {
   background-image: url("https://img.freepik.com/photos-premium/gateau-au-chocolat-fraises-dessus_862994-525.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 35% 100%;
+  background-position: top;
   position: fixed;
+  top: 0;
   right: 0;
-  width: 40%;
-  height: 100vh;
+  width: 43%;
+  height: 100%;
   z-index: -3;
 }
 
@@ -228,3 +249,10 @@ p {
 .admin_flex label {
   margin: 3px;
 }
+/* panier 'i' color white */
+i {
+  color: white;
+}
+/* fin du panier 'i' */
+
+

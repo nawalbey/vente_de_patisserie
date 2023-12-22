@@ -25,3 +25,4 @@ include_once "../inc/nav_bar.php"; ?>
 
 
 <?php include_once "../inc/footer.php"; ?>
+
