@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "../inc/nav_bar.php"; ?>
+include_once "../inc/header.php"; ?>
 
 <div class="class2">
     <form class="form1" action="../model/connexion_db.php" method="post">

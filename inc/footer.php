@@ -1,2 +1,2 @@
-<!--ici creer un footer -->
-</body></html>
+<footer class="mt-3">test footer</footer></body></html>
+

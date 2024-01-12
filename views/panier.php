@@ -1,7 +1,7 @@
 <!-- panier.php --><?php
 session_start();
 // session_destroy();
-require_once('../inc/nav_bar.php');
+require_once('../inc/header.php');
 // require_once('../model/achete.php');
 if (!empty($_SESSION['cart'])) {
     $gateaux = $_SESSION['cart'];

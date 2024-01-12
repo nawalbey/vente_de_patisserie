@@ -1,4 +1,4 @@
-<?php require_once('../inc/nav_bar.php');
+<?php require_once('../inc/header.php');
 
 ?>
 

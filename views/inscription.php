@@ -1,4 +1,4 @@
-<?php include_once "../inc/nav_bar.php" ?>
+<?php include_once "../inc/header.php" ?>
 <div class="class1">
     <div class="container">
         <h1>Inscription</h1>
@@ -37,5 +37,7 @@
             </div>
         </form>
     </div>
-</div>
-<?php include_once "../inc/footer.php" ?>
+    <?php include_once "../inc/footer2.php" ?>
+
+
+

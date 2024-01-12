@@ -1,5 +1,5 @@
 <?php
-require_once('../inc/nav_bar.php');
+require_once('../inc/header.php');
 require_once('../model/action_admin.php');
 $gateaux = gateaux_liste();
 // session_start();

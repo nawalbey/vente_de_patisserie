@@ -5,7 +5,7 @@ session_start();
  *Si l'id de session n'existe  pas, session_id() rnevoie une chaine
  *de caractères vide*/
 // $id_session = session_id();
-include_once "../inc/nav_bar.php";
+include_once "../inc/header.php";
 require_once "../model/function.php";
 
 ?>

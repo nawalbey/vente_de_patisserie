@@ -7,12 +7,8 @@ body {
 
 /* debut du container */
 .container {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 630px;
-  margin: 30px;
-  background-position-x: center;
+  margin-left: 30px;
 }
 /* fin du container */
 
@@ -31,9 +27,7 @@ h1 {
   background-size: cover;
   background-position: 50% 80%;
   height: 100%;
-  padding: 5px;
   width: 100%;
-  position: fixed;
 }
 /* fin de la class1 */
 
@@ -73,11 +67,10 @@ label {
   background-image: url(../img/c27ce794ab5c57eceb709d973b886011.jpeg);
   background-size: cover;
   background-position: center;
-  height: 93%;
-  padding: 20px;
+  height: 100%;
   width: 100%;
   position: relative;
-  position: fixed;
+
 }
 /* fin de la class2 */
 .form1 {
@@ -85,6 +78,7 @@ label {
   left: 300px;
   top: 220px;
 }
+
 .button2 button {
   background-color: #3a0701;
   color: white;
@@ -148,7 +142,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   width: 60%;
-  height: 600px;
+  min-height: 600px;
 }
 .body1 {
   background-color: #562528;
@@ -214,7 +208,6 @@ p {
 .card-text {
   margin-top: 10px;
   text-align: center;
-  
 }
 .ajout_admin_gateau h1 {
   text-align: center;
