@@ -1,2 +1,2 @@
-<footer class="mt-3">test footer</footer></body></html>
+<footer>test footer</footer></body></html>
 
