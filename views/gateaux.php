@@ -2,8 +2,7 @@
 require_once('../inc/header.php');
 require_once('../model/action_admin.php');
 $gateaux = gateaux_liste();
-// session_start();
-// session_destroy();
+var_dump($_SESSION['nombre']);
 ?>
 
 <div class="class3">
@@ -32,7 +31,6 @@ $gateaux = gateaux_liste();
                             <input type="hidden" name="description" value="<?= $gateau['description']; ?>">
                             <input type="submit" class="btn addToCartBtn" id="<?= $gateau['id_gateaux']; ?>" name="ajouterPanier" value="Ajouter au panier">
                         </form>
-                        <!--<a href="../views/panier.php" class="btn">acheter</a>-->
                     </div>
                 </div>
             </div>

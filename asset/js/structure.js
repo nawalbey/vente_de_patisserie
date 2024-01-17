@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // var nbCounts = parseInt(localStorage.getItem("nbCounts")) || 0;
-  var nbCounts = 0;
   var spanArticles = $("#nbArticles");
-  spanArticles.text(nbCounts);
   $(".addToCartBtn").on("click", function (event) {
     event.preventDefault();
     var form = $(this).closest(".add-to-cart-form");
@@ -16,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       success: function (response) {
         // response = JSON.parse(response);
         if (response) {
-          nbCounts++;
-          spanArticles.text(nbCounts);
-          localStorage.setItem("nbCounts", nbCounts);
+          spanArticles.text(response.quantite);
         }
         // ... le reste du code
       },

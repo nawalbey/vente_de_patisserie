@@ -19,9 +19,11 @@ if (!array_key_exists('cart', $_SESSION)) {
 }
 $panier = $_SESSION['cart'];
 $productsDejaDansPanier = false;
-foreach ($panier as $indice => $value) {
+foreach ($panier as $cle => $value) {
     if ($id_gateaux == $value["article"]["id_gateaux"]) {
-        $panier[$indice]["quantite"] += $quantite;
+
+        // Si l'id du gateau ajouté au panier est déjà présent dans le panier , alors on ajoute juste sa quantité et non toutes les informations du gateau
+        $panier[$cle]["quantite"] += $quantite;
         $productsDejaDansPanier = true;
         break;  // pour sortir de la boucle foreach
     }
@@ -39,7 +41,7 @@ foreach ($panier as $value) {
 $_SESSION["nombre"] = $nb;
 
 // Vous pouvez également renvoyer une réponse JSON au client si nécessaire
-$response = array('success' => true, 'message' => 'Article ajouté au panier avec succès');
+$response = array('success' => true, 'message' => 'Article ajouté au panier avec succès', 'quantite' => $nb);
 echo json_encode($response);
 ?>
 

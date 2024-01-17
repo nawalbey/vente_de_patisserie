@@ -5,6 +5,10 @@ body {
 }
 /* fin du body */
 
+.container-height {
+  min-height: 100vh;
+}
+
 /* debut du container */
 .container {
   width: 630px;
@@ -14,7 +18,7 @@ body {
 
 /* container du login */
 .container_login {
-  height: 600px;
+  min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: end;
@@ -22,6 +26,7 @@ body {
 /* fin */
 /* debut du h1 */
 h1 {
+  justify-content: center;
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
@@ -33,7 +38,8 @@ h1 {
 .class1 {
   background-image: url(../img/brownie-au-chocolat-filet-caramel-arrose-dessus_919652-2073.jpg);
   background-size: cover;
-  background-position: 50% 80%;
+  background-attachment: fixed;
+  background-position: 50% 70%;
   height: 100%;
   width: 100%;
 }
@@ -74,29 +80,37 @@ label {
 .class2 {
   background-image: url(../img/c27ce794ab5c57eceb709d973b886011.jpeg);
   background-size: cover;
-  background-position: center;
-  height: 100%;
+  background-attachment: fixed;
   width: 100%;
   position: relative;
 }
 /* fin de la class2 */
+/* debut form1 */
 .form1 {
   width: 250px;
   text-align: center;
 }
+/* fin de form1 */
 
 .button2 button {
   background-color: #3a0701;
   color: white;
 }
+/* debut du button2 button:hover */
 .button2 button:hover {
   color: white;
   background-color: #3a0701;
 }
+/* fin */
+
+/* debut du button2 */
 .button2 {
   text-align: center;
   font-family: Georgia, serif;
 }
+/* fin */
+
+/* debut du titre2 */
 .titre2 {
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
@@ -104,24 +118,38 @@ label {
   text-decoration: underline;
   text-align: center;
 }
+/* fin */
+
+/* debut du button3 button:hover */
 .button3 button:hover {
   text-align: right;
   background-color: #3a0701;
 }
+/* fin */
 
+/* debut de la nav */
 nav {
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
+/* fin */
+
+/* debut de la nav > div */
 nav > div {
   display: flex;
   width: 25%;
   justify-content: end;
 }
+/* fin */
+
+/* debut de nav div:nth-child(2) */
 nav div:nth-child(2) {
   justify-content: center;
 }
+/* fin */
+
+/* debut de h2 */
 h2 {
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
@@ -129,20 +157,35 @@ h2 {
   text-decoration: underline;
   color: white;
 }
+/* fin */
+
+/* debut de la navbar1 */
 .navbar1 {
   margin-right: 10px;
 }
+/* fin */
+
+/* debut color1 */
 .color1 {
   background-color: #3a0701;
   color: white;
 }
+/* fin */
+
+/* debut de color1:hover */
 .color1:hover {
   background-color: #3a0701;
   color: white;
 }
+/* fin */
+
+/* debut de navbar2 */
 .navbar2 {
   background-color: #3a0701;
 }
+/* fin */
+
+/* debut de la class3 */
 .class3 {
   display: flex;
   flex-wrap: wrap;
@@ -150,10 +193,15 @@ h2 {
   width: 60%;
   min-height: 600px;
 }
+/* fin */
+
+/* debut de body1 */
 .body1 {
   background-color: #562528;
 }
+/* fin */
 
+/* debut de bg-gateau */
 .bg-gateau {
   background-image: url("https://img.freepik.com/photos-premium/gateau-au-chocolat-fraises-dessus_862994-525.jpg");
   background-repeat: no-repeat;
@@ -166,41 +214,64 @@ h2 {
   height: 100%;
   z-index: -3;
 }
+/* fin */
 
+/* debut card */
 .card {
   margin: 15px 15px;
 }
+/* fin */
 
+/* debut de card img */
 .card img {
   height: 300px;
 }
+/* fin */
+
+/* debut de h5 */
 h5 {
   text-align: center;
   font-weight: bold;
   text-decoration: underline;
 }
+/* fin */
+
+/* debut p */
 p {
   margin-top: 5px;
 }
+/* fin */
+
+/* debut btn */
 .btn {
   background-color: #562528;
   color: white;
 }
+/* fin */
+
+/* debut btn:hover */
 .btn:hover {
   background-color: #562528;
   color: white;
 }
+/* fin */
 
+/* debut card */
 .card {
   position: relative;
 }
+/* fin */
 
+/* debut card-body */
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
+/* fin */
+
+/* debut prix_gateau */
 .prix_gateau {
   position: absolute;
   top: 250px;
@@ -211,10 +282,16 @@ p {
   padding: 10px;
   border-radius: 25px;
 }
+/* fin */
+
+/* debut card-text */
 .card-text {
   margin-top: 10px;
   text-align: center;
 }
+/* fin */
+
+/* debut de ajout_admin_gateau h1 */
 .ajout_admin_gateau h1 {
   text-align: center;
   font-weight: bold;
@@ -224,10 +301,16 @@ p {
   text-decoration: underline;
   padding-top: 25px;
 }
+/* fin */
+
+/* debut de ajout_admin_gateau form */
 .ajout_admin_gateau form {
   margin: auto;
   width: 600px;
 }
+/* fin */
+
+/* debut de ajout_admin_gateau */
 .ajout_admin_gateau {
   background-image: url(../img/pile-brownies-au-chocolat-fond-rose_893012-41532.jpg);
   background-repeat: no-repeat;
@@ -237,38 +320,55 @@ p {
   width: 1000px;
   position: fixed;
 }
+/* fin */
 
+/* debut de admin_flex */
 .admin_flex {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+/* fin de admin_flex */
 
+/* debut  admin_flex input */
 .admin_flex input[type="submit"] {
   margin: 20px 0;
 }
+/* fin de admin_flex input */
 
+/* debut admin_flex label */
 .admin_flex label {
   margin: 3px;
 }
+/* fin de admin_flex label */
+
 /* panier 'i' color white */
 i {
   color: white;
 }
 /* fin du panier 'i' */
 
+/* debut de la class4 */
 .class4 {
-  justify-content: center;
-  display: flex;
-  color: white;
-  margin-top: 45px;
+  background-image: url(../img/gateau-aux-trois-chocolats_208978-443.avif);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 70%;
+  height: 100%;
 }
+/* fin de la class4 */
+
+/* debut du panier */
 .panier {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  width: 100%;
 }
+/* fin du panier */
+
+/* debut de card-text1 */
 .card-text1 {
   background-color: #562528;
   color: white;
@@ -276,3 +376,33 @@ i {
   padding: 10px;
   border-radius: 30px;
 }
+/* fin de card-taxt1 */
+
+/* debut du footer */
+.footer-login {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* fin */
+
+/* debut du footer i */
+footer i {
+  font-size: 50px;
+  color: #9d7e8d;
+  /* padding-bottom: 40px; */
+}
+/* fin */
+
+/* debut du footer span */
+footer span {
+  color: white;
+  padding-left: 30px;
+  /* height: 30%; */
+  font-family: "Gill Sans", sans-serif;
+  text-decoration: underline;
+}
+/* fin */
