@@ -34,16 +34,21 @@ h1 {
 }
 /* fin du h1 */
 
-/* debut de la class1 position fixed pour pas avoir le scroll-behavior*/
+/* debut de la class1 */
 .class1 {
   background-image: url(../img/brownie-au-chocolat-filet-caramel-arrose-dessus_919652-2073.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% 70%;
-  height: 100%;
   width: 100%;
 }
 /* fin de la class1 */
+
+/* debut de la class1 form */
+.class1 form {
+  padding-top: 50px;
+}
+/* fin */
 
 /* debut du label */
 label {
@@ -219,6 +224,7 @@ h2 {
 /* debut card */
 .card {
   margin: 15px 15px;
+  
 }
 /* fin */
 
@@ -393,7 +399,6 @@ i {
 footer i {
   font-size: 50px;
   color: #9d7e8d;
-  /* padding-bottom: 40px; */
 }
 /* fin */
 
@@ -401,8 +406,14 @@ footer i {
 footer span {
   color: white;
   padding-left: 30px;
-  /* height: 30%; */
   font-family: "Gill Sans", sans-serif;
   text-decoration: underline;
+}
+/* fin */
+
+/* debut de footer2-inscription */
+.footer2-inscription {
+  display: flex;
+  justify-content: space-around;
 }
 /* fin */

@@ -1,9 +1,9 @@
 <?php include_once "../inc/header.php" ?>
 
 <div class="class1">
-    <div class="container">
-        <h1>Inscription</h1>
+    <div class="container container-height">
         <form action="../../vente_de_patisserie/model/db_inscription.php" method="post">
+            <h1>Inscription</h1>
             <div>
                 <div class="form-group">
                     <label>nom</label>
@@ -38,7 +38,6 @@
             </div>
         </form>
     </div>
-    <?php include_once "../inc/footer.php" ?>
-
-
+    <?php include_once "../inc/footer2.php" ?>
+</div>
 

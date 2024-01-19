@@ -2,7 +2,7 @@
 require_once('../inc/header.php');
 require_once('../model/action_admin.php');
 $gateaux = gateaux_liste();
-var_dump($_SESSION['nombre']);
+
 ?>
 
 <div class="class3">
