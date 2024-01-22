@@ -9,10 +9,11 @@ if (!empty($_SESSION['cart'])) {
 ?>
 <div class="class4">
     <h1>Panier</h1>
-    <div class="panier">
-        <?php
-        if (isset($gateaux)) {
-            foreach ($gateaux as $clef => $gateau) { ?>
+    <div class="container-height">
+        <div class="panier">
+            <?php
+            if (isset($gateaux)) {
+                foreach ($gateaux as $clef => $gateau) { ?>
                         <div class="card" style="width: 18rem;">
                             <img src='../asset/img/<?= $gateau["article"]['photo']; ?>' class="card-img-top" alt="verrine">
                             <div class="card-body">
@@ -30,13 +31,26 @@ if (!empty($_SESSION['cart'])) {
                                     <i class="fa-solid fa-cookie-bite"></i>
                                     <?php echo $gateau["quantite"]; ?>
                                 </p><br>
+
+                                <div
+                                    class="button3">
+                                    <!-- Bouton Supprimer -->
+                                    <a href="../model/supprimer_gateau.php?id=<?= $gateau['article']['id_gateaux'] ?>" class="btn">Supprimer</a>
+
+                                </div>
                             </div>
                         </div>
-            <?php }
-        } else { ?>
-                <p><?= $messageVide ?></p>
-        <?php } ?>
+                <?php }
+            } else { ?>
+                    <p><?= $messageVide ?></p>
+            <?php } ?>
+        </div>
+        <div
+            id='commander'>
+            <!-- Bouton Commander -->
+            <a href="../model/commander.php?commande=true" class="btn" name="commande">Commander</a>
+        </div>
     </div>
-    <?php include_once "../inc/footer.php" ?>
+    <?php include_once "../inc/footer2.php" ?>
 </div>
 

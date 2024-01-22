@@ -26,11 +26,12 @@ body {
 /* fin */
 /* debut du h1 */
 h1 {
-  justify-content: center;
+  text-align: center;
   letter-spacing: -2px;
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
   text-decoration: underline;
+  padding-top: 35px;
 }
 /* fin du h1 */
 
@@ -224,7 +225,6 @@ h2 {
 /* debut card */
 .card {
   margin: 15px 15px;
-  
 }
 /* fin */
 
@@ -361,7 +361,6 @@ i {
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% 70%;
-  height: 100%;
 }
 /* fin de la class4 */
 
@@ -415,5 +414,18 @@ footer span {
 .footer2-inscription {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 50;
 }
 /* fin */
+
+#commander {
+  text-align: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#commander a {
+  font-size: 30px;
+  margin-top: 60px;
+}
