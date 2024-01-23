@@ -28,3 +28,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+function quantite(event) {
+  var bouton = $(event.target);
+
+  // Trouver l'élément span associé au bouton cliqué
+  var quantiteSpan = bouton.closest(".card").find(".quantite-gateaux");
+
+  // Vérifier si l'élément span a été trouvé
+  if (quantiteSpan.length) {
+    // Vérifier si le bouton est "plus" ou "minus"
+    var isPlusButton = bouton.hasClass("plus");
+
+    // Mettre à jour la quantité
+    var currentQuantite = parseInt(quantiteSpan.text(), 10);
+    var updateQuantite = isPlusButton
+      ? currentQuantite + 1
+      : Math.max(currentQuantite - 1, 0);
+
+    // Envoyer la mise à jour au serveur via AJAX
+    $.ajax({
+      type: "post",
+      url: "../model/achete.php",
+      data: {
+        updateQuantite: updateQuantite,
+      },
+      success: function (response) {
+        // Mettre à jour l'affichage avec la nouvelle quantité
+        quantiteSpan.text(response.newQuantite);
+      },
+      error: function (error) {
+        console.log("Erreur" + error.message);
+      },
+    });
+  } else {
+    console.error("Aucun élément span trouvé. Structure HTML incorrecte ?");
+    console.log(
+      "Contenu HTML de la carte:",
+      bouton.closest(".card")[0].outerHTML
+    );
+  }
+}
+

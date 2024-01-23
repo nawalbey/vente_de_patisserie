@@ -2,9 +2,11 @@
 //On démarre une nouvelle session
 session_start();
 
+echo 'page connexion';
 
 require_once "../inc/database.php";
 if (isset($_POST['connexion'])) {
+    echo 'isset connexion';
 
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
@@ -18,10 +20,10 @@ if (isset($_POST['connexion'])) {
     $request = $db->prepare("SELECT * FROM user WHERE email = ?");
     //executer la requete
     try {
+        echo 'try';
         $request->execute(array($email));
         //recuperer la resultat de la requete
         $userInfo = $request->fetch(PDO::FETCH_ASSOC);
-        (PDO::FETCH_ASSOC);
         if (empty($userInfo)) {
             echo "utilisateur inconnu";
         } else {
@@ -33,14 +35,15 @@ if (isset($_POST['connexion'])) {
                 } else {
                     $_SESSION["id"] = $userInfo["id_user"];
                     $_SESSION["nom"] = $userInfo["nom"];
+                    $_SESSION["prenom"] = $userInfo['prenom'];
                     $_SESSION["email"] = $userInfo["email"];
-                    header("Location: http://localhost/vente_de_patisserie/views/jeuxvideo_list.php");
+                    header("Location: http://localhost/vente_de_patisserie/views/gateaux.php");
                 }
             } else {
                 echo "Mot de passe incorrect";
             }
         }
     } catch (PDOException $e) {
-        $e->getMessage();
+        echo $e->getMessage();
     }
 }

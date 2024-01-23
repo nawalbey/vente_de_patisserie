@@ -2,7 +2,7 @@
 
 <div class="class1">
     <div class="container container-height">
-        <form action="../../vente_de_patisserie/model/db_inscription.php" method="post">
+        <form action="../model/db_inscription.php" method="post">
             <h1>Inscription</h1>
             <div>
                 <div class="form-group">
@@ -13,10 +13,13 @@
                     <label>prenom</label>
                     <input type="text" class="form-control" name="prenom">
                 </div>
-
+                <div class="form-group">
+                    <label>email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
                 <div class="form-group">
                     <label>mot_de_passe</label>
-                    <input type="text" class="form-control" name="mot_de_passe">
+                    <input type="password" class="form-control" name="mot_de_passe">
                 </div>
 
                 <div class="form-group">

@@ -27,10 +27,14 @@ if (!empty($_SESSION['cart'])) {
                                 <p class="card-text">
                                     <?php echo $gateau["article"]['description']; ?>
                                 </p><br>
-                                <p class="card-text1">
-                                    <i class="fa-solid fa-cookie-bite"></i>
-                                    <?php echo $gateau["quantite"]; ?>
-                                </p><br>
+                                <div class="def-number-input number-input safari_only d-flex">
+                                    <button onclick="quantite(event)" class="minus"></button>
+                                    <p class="card-text1">
+                                        <i class="fa-solid fa-cookie-bite"></i>
+                                        <span class="quantite-gateaux"><?php echo $gateau["quantite"]; ?></span>
+                                    </p>
+                                    <button onclick="quantite(event)" class="plus"></button>
+                                </div>
 
                                 <div
                                     class="button3">
@@ -45,11 +49,13 @@ if (!empty($_SESSION['cart'])) {
                     <p><?= $messageVide ?></p>
             <?php } ?>
         </div>
-        <div
-            id='commander'>
-            <!-- Bouton Commander -->
-            <a href="../model/commander.php?commande=true" class="btn" name="commande">Commander</a>
-        </div>
+        <?php if (!isset($_SESSION['cart'])) { ?>
+                <div
+                    id='commander'>
+                    <!-- Bouton Commander -->
+                    <a href="../model/commander.php?commande=true" class="btn" name="commande">Commander</a>
+                </div>
+        <?php } ?>
     </div>
     <?php include_once "../inc/footer2.php" ?>
 </div>

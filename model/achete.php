@@ -43,5 +43,27 @@ $_SESSION["nombre"] = $nb;
 // Vous pouvez également renvoyer une réponse JSON au client si nécessaire
 $response = array('success' => true, 'message' => 'Article ajouté au panier avec succès', 'quantite' => $nb);
 echo json_encode($response);
-?>
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateQuantite'])) {
+    $nouvelleQuantite = $_POST['updateQuantite'];
+    $id_gateau = $_POST['gateauId'];
+
+    // Recherchez l'article dans le panier
+    foreach ($panier as $cle => $value) {
+        if ($id_gateau == $value["article"]["id_gateaux"]) {
+            // Mettez à jour la quantité de l'article existant
+            $panier[$cle]["quantite"] = $nouvelleQuantite;
+            break;  // pour sortir de la boucle foreach
+        }
+    }
+
+    // Mettez à jour la quantité dans la session
+    $_SESSION['cart'] = $panier;
+
+    $response = array('success' => true, 'message' => 'Mise à jour de la quantité avec succès', 'newQuantite' => $nouvelleQuantite);
+    echo json_encode($response);
+} else {
+    $error = array('success' => false, 'message' => 'Problème lors de la mise à jour de la quantité');
+    echo json_encode($error);
+}
