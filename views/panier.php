@@ -5,6 +5,7 @@ if (!empty($_SESSION['cart'])) {
 
 } else {
     $messageVide = "Votre panier est vide";
+    
 }
 ?>
 <div class="class4">
@@ -27,15 +28,15 @@ if (!empty($_SESSION['cart'])) {
                                 <p class="card-text">
                                     <?php echo $gateau["article"]['description']; ?>
                                 </p><br>
-                                <div class="def-number-input number-input safari_only d-flex">
-                                    <button onclick="quantite(event)" class="minus"></button>
+                                <form class="def-number-input number-input safari_only d-flex formCart">
+                                    <input type="hidden" name="id_gateau<?= $gateau['article']['id_gateaux'] ?>" value="<?= $gateau['article']['id_gateaux'] ?> ">
+                                    <button onclick="quantite(event)" class="minus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>"></button>
                                     <p class="card-text1">
                                         <i class="fa-solid fa-cookie-bite"></i>
                                         <span class="quantite-gateaux"><?php echo $gateau["quantite"]; ?></span>
                                     </p>
-                                    <button onclick="quantite(event)" class="plus"></button>
-                                </div>
-
+                                    <button onclick="quantite(event)" class="plus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>"></button>
+                                </form>
                                 <div
                                     class="button3">
                                     <!-- Bouton Supprimer -->

@@ -5,16 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     var form = $(this).closest(".add-to-cart-form");
     var formData = form.serialize();
-    console.log(formData);
+    console.log(formData + "&ajouterPanier=panier");
     $.ajax({
-      type: "post",
+      type: "POST",
       url: "../model/achete.php",
-      data: formData,
+      data: formData + "&ajouterPanier=panier",
       dataType: "json",
       success: function (response) {
         // response = JSON.parse(response);
         if (response) {
-          spanArticles.text(response.quantite);
+          $("#nbArticles").text(response.quantite);
         }
         // ... le reste du code
       },
@@ -28,12 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 function quantite(event) {
+  event.preventDefault();
   var bouton = $(event.target);
 
   // Trouver l'élément span associé au bouton cliqué
   var quantiteSpan = bouton.closest(".card").find(".quantite-gateaux");
 
+        console.log(quantiteSpan);
   // Vérifier si l'élément span a été trouvé
   if (quantiteSpan.length) {
     // Vérifier si le bouton est "plus" ou "minus"
@@ -44,14 +47,16 @@ function quantite(event) {
     var updateQuantite = isPlusButton
       ? currentQuantite + 1
       : Math.max(currentQuantite - 1, 0);
+    var formData = $(".formCart");
 
     // Envoyer la mise à jour au serveur via AJAX
     $.ajax({
       type: "post",
       url: "../model/achete.php",
-      data: {
-        updateQuantite: updateQuantite,
-      },
+      // data: {
+      //   updateQuantite: updateQuantite,
+      // },
+      data: formData,
       success: function (response) {
         // Mettre à jour l'affichage avec la nouvelle quantité
         quantiteSpan.text(response.newQuantite);
@@ -68,4 +73,3 @@ function quantite(event) {
     );
   }
 }
-

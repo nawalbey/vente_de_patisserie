@@ -11,9 +11,10 @@
         <!-- Si la clé id existe dans la Session, ça veut dire que l'utilisateur est connecté , alors , le bouton se déconnecter s'affichera, sinon , c'est qu'il n'est pas connecté , et donc inscription/login s'affichera -->
         <?php if (isset($_SESSION['id'])) { ?>
                 <div class="bienvenue1">
-                    <h3>Bienvenue Nanou</h3>
+                    <h3>Bienvenue
+                        <?= $_SESSION['prenom'] ?></h3>
+                    <a href="../model/deconnexion.php?logout=true" class="btn color1">Se déconnecter</a>
                 </div>
-                <a href="../views/login.php" class="btn color1">Se déconnecter</a>
         <?php } else { ?>
                 <a href="../views/inscription.php" class="btn me-2 color1 ">inscription</a>
                 <a href="../views/login.php" class="btn color1">login</a>

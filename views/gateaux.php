@@ -29,7 +29,7 @@ $gateaux = gateaux_liste();
                             <input type="hidden" name="photo" value="<?= $gateau['photo']; ?>">
                             <input type="hidden" name="prix" value="<?= $gateau['prix']; ?>">
                             <input type="hidden" name="description" value="<?= $gateau['description']; ?>">
-                            <input type="submit" class="btn addToCartBtn" id="<?= $gateau['id_gateaux']; ?>" name="ajouterPanier" value="Ajouter au panier">
+                            <input type="submit" class="btn addToCartBtn" id="<?= $gateau['id_gateaux']; ?>">
                         </form>
                     </div>
                 </div>
@@ -39,7 +39,5 @@ $gateaux = gateaux_liste();
     <div class="bg-gateau"></div>
 </div>
 
-
-<script src="../asset/js/structure.js"></script>
 <?php include_once "../inc/footer.php" ?>
 
