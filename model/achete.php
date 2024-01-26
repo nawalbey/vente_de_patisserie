@@ -4,7 +4,7 @@ session_start();
 require_once('../inc/database.php');
 
 // Vérifiez si la requête est une requête POST
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajouterPanier'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajouterPanier'])) {
     // Vous pouvez maintenant faire ce que vous voulez avec ces données, par exemple, ajouter l'article au panier.
     extract($_POST);
 
@@ -41,21 +41,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajouterPanier'])) {
     echo json_encode($response);
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantityChange'])) {
-    var_dump($_POST);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantityChange'])) {
 
-    // Recherchez l'article dans le panier
-    // foreach ($panier as $cle => $value) {
-    //     if ($id_gateau == $value["article"]["id_gateaux"]) {
-    //         // Mettez à jour la quantité de l'article existant
-    //         $panier[$cle]["quantite"] = $nouvelleQuantite;
-    //         break;  // pour sortir de la boucle foreach
-    //     }
-    // }
+    $panier = $_SESSION['cart'];
+    //Recherchez l'article dans le panier
+    foreach ($panier as $cle => $value) {
+        if ($id_gateau == $value["article"]["id_gateaux"]) {
+            // Mettez à jour la quantité de l'article existant
+            $panier[$cle]["quantite"] = $nouvelleQuantite;
+            break;  // pour sortir de la boucle foreach
+        }
+    }
 
     // Mettez à jour la quantité dans la session
-    // $_SESSION['cart'] = $panier;
+    $_SESSION['cart'] = $panier;
 
-    // $response = array('success' => true, 'message' => 'Mise à jour de la quantité avec succès', 'newQuantite' => $nouvelleQuantite);
-    echo json_encode([]);
+    $response = array('success' => true, 'message' => 'Mise à jour de la quantité avec succès', 'newQuantite' => $nouvelleQuantite);
+    echo json_encode($response);
 }

@@ -5,7 +5,7 @@ if (!empty($_SESSION['cart'])) {
 
 } else {
     $messageVide = "Votre panier est vide";
-    
+
 }
 ?>
 <div class="class4">
@@ -29,18 +29,18 @@ if (!empty($_SESSION['cart'])) {
                                     <?php echo $gateau["article"]['description']; ?>
                                 </p><br>
                                 <form class="def-number-input number-input safari_only d-flex formCart">
-                                    <input type="hidden" name="id_gateau<?= $gateau['article']['id_gateaux'] ?>" value="<?= $gateau['article']['id_gateaux'] ?> ">
-                                    <button onclick="quantite(event)" class="minus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>"></button>
+                                    <button onclick="quantite(event)" class="minus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>"></button>
                                     <p class="card-text1">
                                         <i class="fa-solid fa-cookie-bite"></i>
-                                        <span class="quantite-gateaux"><?php echo $gateau["quantite"]; ?></span>
+                                        <span id="quantite-gateaux<?= $gateau['article']['id_gateaux'] ?>" class="quantity"><?php echo $gateau["quantite"]; ?></span>
                                     </p>
-                                    <button onclick="quantite(event)" class="plus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>"></button>
-                                </form>
-                                <div
-                                    class="button3">
-                                    <!-- Bouton Supprimer -->
-                                    <a href="../model/supprimer_gateau.php?id=<?= $gateau['article']['id_gateaux'] ?>" class="btn">Supprimer</a>
+                                    <button class="plus ajouter-produit" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-quantite="<?= $gateau["quantite"] ?>"></button>
+
+                                        </form>
+                                        <div
+                                            class="button3">
+                                            <!-- Bouton Supprimer -->
+                                            <a href="../model/supprimer_gateau.php?id=<?= $gateau['article']['id_gateaux'] ?>" class="btn">Supprimer</a>
 
                                 </div>
                             </div>

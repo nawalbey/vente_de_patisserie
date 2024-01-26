@@ -2,9 +2,22 @@
 <?php session_start();
 ?>
 <nav class="navbar2">
-    <div></div>
+    <div>
+        <a href="../views/gateaux.php" class="btn color1">gateaux</a>
+        <div class="imgchocolat">
+            <img src="../asset/img/31727589-piece-de-chocolat-gateau-avec-fondu-chocolat-et-epars-chocolat-puces-generatif-ai-photo.jpg" alt="piece de chocolat">
+        </div>
+    </div>
     <div>
         <h2>vente de patisserie</h2>
+    </div>
+
+      <div>
+        <a href="../views/gateaux.php"></a>
+        <div class="goutechocolat">
+            <img src="../asset/img/i184278-shutterstock-342885410.jpeg" alt="piece de chocolat">
+        </div>
+        
     </div>
     <div
         class="navbar1">
@@ -26,6 +39,8 @@
             <span id='nbArticles'><?= $_SESSION['nombre'] ?? ''; ?>
             </span>
         </button>
+
+
     </div>
 </nav>
 <!-- fin de la nav_bar -->

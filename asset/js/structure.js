@@ -29,47 +29,50 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function quantite(event) {
-  event.preventDefault();
-  var bouton = $(event.target);
+$(document).ready(function () {
+  $(".ajouter-produit").on("click", function (event) {
+    // function quantite(event) {
+    event.preventDefault();
+    // var bouton = $(event.target);
+    var gateauxId = $(this).data("gateaux-id");
+    var quantiteSpan = $(this).data("gateaux-quantite");
+    // Trouver l'élément span associé au bouton cliqué
+    // var quantiteSpan = bouton.closest(".card").find(".quantite-gateaux");
 
-  // Trouver l'élément span associé au bouton cliqué
-  var quantiteSpan = bouton.closest(".card").find(".quantite-gateaux");
-
-        console.log(quantiteSpan);
-  // Vérifier si l'élément span a été trouvé
-  if (quantiteSpan.length) {
-    // Vérifier si le bouton est "plus" ou "minus"
-    var isPlusButton = bouton.hasClass("plus");
-
-    // Mettre à jour la quantité
-    var currentQuantite = parseInt(quantiteSpan.text(), 10);
-    var updateQuantite = isPlusButton
-      ? currentQuantite + 1
-      : Math.max(currentQuantite - 1, 0);
-    var formData = $(".formCart");
-
-    // Envoyer la mise à jour au serveur via AJAX
-    $.ajax({
-      type: "post",
-      url: "../model/achete.php",
-      // data: {
-      //   updateQuantite: updateQuantite,
-      // },
-      data: formData,
-      success: function (response) {
-        // Mettre à jour l'affichage avec la nouvelle quantité
-        quantiteSpan.text(response.newQuantite);
-      },
-      error: function (error) {
-        console.log("Erreur" + error.message);
-      },
-    });
-  } else {
-    console.error("Aucun élément span trouvé. Structure HTML incorrecte ?");
-    console.log(
-      "Contenu HTML de la carte:",
-      bouton.closest(".card")[0].outerHTML
-    );
-  }
-}
+    // alert(gateauxId);
+    // Vérifier si l'élément span a été trouvé
+    if (quantiteSpan) {
+      // Vérifier si le bouton est "plus" ou "minus"
+      var isPlusButton = $(this).hasClass("plus");
+      // Mettre à jour la quantité
+      var currentQuantite = parseInt(quantiteSpan, 10);
+      var updateQuantite = isPlusButton
+        ? currentQuantite + 1
+        : Math.max(currentQuantite - 1, 0);
+      // Envoyer la mise à jour au serveur via AJAX
+      $.ajax({
+        type: "post",
+        url: "../model/achete.php",
+        data: {
+          checkId: gateauxId,
+          updateQuantite: updateQuantite,
+          quantityChange: true,
+        },
+        success: function (response) {
+          $("#quantite-gateaux" + gateauxId).text(response.newQuantite);
+          // Mettre à jour l'affichage avec la nouvelle quantité
+          $("#nbArticles").text(response.newQuantite);
+        },
+        error: function (error) {
+          console.log("Erreur" + error.message);
+        },
+      });
+    } else {
+      console.error("Aucun élément span trouvé. Structure HTML incorrecte ?");
+      console.log(
+        "Contenu HTML de la carte:",
+        $(this).closest(".card")[0].outerHTML
+      );
+    }
+  });
+});

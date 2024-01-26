@@ -146,6 +146,13 @@ nav > div {
   display: flex;
   width: 25%;
   justify-content: end;
+ 
+}
+/* fin */
+
+/* nav > premier enfant div (first-child) */
+nav > div:first-child {
+  justify-content: flex-start;
 }
 /* fin */
 
@@ -198,6 +205,7 @@ h2 {
   justify-content: center;
   width: 60%;
   min-height: 600px;
+  padding-bottom: 60px;
 }
 /* fin */
 
@@ -418,6 +426,7 @@ footer span {
 }
 /* fin */
 
+/* debut de commander */
 #commander {
   text-align: center;
   height: 200px;
@@ -425,16 +434,23 @@ footer span {
   align-items: center;
   justify-content: center;
 }
+/* fin */
+
+/* id# commander */
 #commander a {
   font-size: 30px;
   margin-top: 60px;
 }
+/* fin */
 
-.bienvenue1{
+/* debut classe bienvenue1 */
+.bienvenue1 {
   display: flex;
   align-items: center;
 }
+/* fin */
 
+/* debut classe bienvenue1 et h3 */
 .bienvenue1 h3 {
   text-decoration: underline;
   font-style: italic;
@@ -442,4 +458,78 @@ footer span {
   font-size: 18px;
   padding-right: 20px;
   margin: 0;
+}
+/* fin */
+
+/*  debut de la classe imgchocolat img */
+.imgchocolat img {
+  width: 60px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  /* Ajoute une transition de 0.3 secondes avec une fonction d'accélération */
+  animation: rotation 6s linear infinite;
+  border-radius: 40%;
+}
+/* fin */
+
+/* debut de la classe imgchocolat img:hover */
+.imgchocolat img:hover {
+  transform: rotate(
+    20deg
+  ); /* Applique une rotation de 20 degrés au survol de la souris */
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+
+/*  debut de la classe imgchocolat img */
+.goutechocolat img {
+  width: 60px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  /* Ajoute une transition de 0.3 secondes avec une fonction d'accélération */
+  animation: rotation 6s linear infinite;
+  border-radius: 40%;
+}
+/* fin */
+
+/* debut de la classe imgchocolat img:hover */
+.goutechocolat img:hover {
+  transform: rotate(
+    20deg
+  ); /* Applique une rotation de 20 degrés au survol de la souris */
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
