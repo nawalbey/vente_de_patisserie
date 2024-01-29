@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data: formData + "&ajouterPanier=panier",
       dataType: "json",
       success: function (response) {
+        console.log(response);
         // response = JSON.parse(response);
         if (response) {
           $("#nbArticles").text(response.quantite);
@@ -28,14 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
+var updateQuantite;
+var isPlusButton;
+var currentQuantite;
 $(document).ready(function () {
-  $(".ajouter-produit").on("click", function (event) {
+  $(".update-produit").on("click", function (event) {
     // function quantite(event) {
     event.preventDefault();
     // var bouton = $(event.target);
     var gateauxId = $(this).data("gateaux-id");
-    var quantiteSpan = $(this).data("gateaux-quantite");
+    var quantiteSpan = $(this).data("gateaux-quantite")+gateauxId;
     // Trouver l'élément span associé au bouton cliqué
     // var quantiteSpan = bouton.closest(".card").find(".quantite-gateaux");
 
@@ -43,12 +46,11 @@ $(document).ready(function () {
     // Vérifier si l'élément span a été trouvé
     if (quantiteSpan) {
       // Vérifier si le bouton est "plus" ou "minus"
-      var isPlusButton = $(this).hasClass("plus");
+      isPlusButton = $(this).hasClass("plus");
       // Mettre à jour la quantité
-      var currentQuantite = parseInt(quantiteSpan, 10);
-      var updateQuantite = isPlusButton
-        ? currentQuantite + 1
-        : Math.max(currentQuantite - 1, 0);
+      updateQuantite = parseInt(quantiteSpan, 10);
+      isPlusButton ? updateQuantite++ : Math.max(updateQuantite--, 0);
+      console.log(updateQuantite);
       // Envoyer la mise à jour au serveur via AJAX
       $.ajax({
         type: "post",
@@ -58,10 +60,12 @@ $(document).ready(function () {
           updateQuantite: updateQuantite,
           quantityChange: true,
         },
+        dataType: "json",
         success: function (response) {
           $("#quantite-gateaux" + gateauxId).text(response.newQuantite);
+          quantiteSpan+gateauxId = response.newQuantite;
           // Mettre à jour l'affichage avec la nouvelle quantité
-          $("#nbArticles").text(response.newQuantite);
+          $("#nbArticles").text(response.nbTotal);
         },
         error: function (error) {
           console.log("Erreur" + error.message);

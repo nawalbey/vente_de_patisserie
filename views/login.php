@@ -4,6 +4,13 @@ include_once "../inc/header.php"; ?>
 
 <div class="class2">
     <div class="container-height">
+        <?php if (isset($_SESSION['inscription_reussie'])) { ?>
+                <div class="alert alert-success w-50 m-auto ">
+                    <h3 class="text-center"><?= $_SESSION['inscription_reussie'] ?></h3>
+                </div>
+        <?php }
+        unset($_SESSION['inscription_reussie']); ?>
+        <div></div>
         <div class="container container_login">
             <form class="form1" action="../model/connexion.php" method="post">
                 <h1>connexion</h1>

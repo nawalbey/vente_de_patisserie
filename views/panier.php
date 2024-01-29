@@ -29,12 +29,13 @@ if (!empty($_SESSION['cart'])) {
                                     <?php echo $gateau["article"]['description']; ?>
                                 </p><br>
                                 <form class="def-number-input number-input safari_only d-flex formCart">
-                                    <button onclick="quantite(event)" class="minus" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>"></button>
-                                    <p class="card-text1">
-                                        <i class="fa-solid fa-cookie-bite"></i>
-                                        <span id="quantite-gateaux<?= $gateau['article']['id_gateaux'] ?>" class="quantity"><?php echo $gateau["quantite"]; ?></span>
+                                    <button class="minus update-produit" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-quantite="<?= $gateau["quantite"] ?>"></button>
+
+                                            <p class="card-text1">
+                                                <i class="fa-solid fa-cookie-bite"></i>
+                                                <span id="quantite-gateaux<?= $gateau['article']['id_gateaux'] ?>" class="quantity"><?php echo $gateau["quantite"]; ?></span>
                                     </p>
-                                    <button class="plus ajouter-produit" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-quantite="<?= $gateau["quantite"] ?>"></button>
+                                    <button class="plus update-produit" name="quantityChange<?= $gateau['article']['id_gateaux'] ?>"  data-gateaux-id="<?= $gateau['article']['id_gateaux'] ?>" data-gateaux-quantite="<?= $gateau["quantite"] ?>"></button>
 
                                         </form>
                                         <div

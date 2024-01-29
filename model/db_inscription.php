@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../inc/database.php";
 
 if (isset($_POST['inscription'])) {
@@ -20,8 +20,8 @@ if (isset($_POST['inscription'])) {
     try {
         $passwordHash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
         $request->execute(array($nom, $prenom, $email, $passwordHash, $adresse, $numero_telephone, $date_de_naissance));
+        $_SESSION['inscription_reussie'] = "Votre inscription s'est correctement déroulée";
         header("Location: http://localhost/vente_de_patisserie/views/login.php");
-        echo 'Inscription reussie !';
     } catch (PDOException $e) {
         echo $e->getMessage();
     }

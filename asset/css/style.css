@@ -5,6 +5,10 @@ body {
 }
 /* fin du body */
 
+.body1 {
+  background-color: #171620;
+}
+
 .container-height {
   min-height: 100vh;
 }
@@ -146,7 +150,6 @@ nav > div {
   display: flex;
   width: 25%;
   justify-content: end;
- 
 }
 /* fin */
 
@@ -324,38 +327,79 @@ p {
 }
 /* fin */
 
-/* debut de ajout_admin_gateau */
-.ajout_admin_gateau {
-  background-image: url(../img/pile-brownies-au-chocolat-fond-rose_893012-41532.jpg);
+/* debut de ajout_admin_gateaux form */
+.ajout_admin_gateau form {
+  width: 50%;
+  height: 1178px;
+  background-image: url(../img/Gateau-chocolat-zucchini-tinyjpg-1178px.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
-  padding: 20px;
-  width: 1000px;
-  position: fixed;
+  background-position: center;
 }
 /* fin */
 
 /* debut de admin_flex */
-.admin_flex {
+.admin_form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* debut .admin_flex .admin_flex_envoyer */
+.admin_flex,
+.admin_flex_envoyer {
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
+  padding-bottom: 250px;
+}
+/* fin */
+
+/* debut .admin_flex_envoyer */
+.admin_flex_envoyer {
+  width: 100%;
 }
 /* fin de admin_flex */
 
 /* debut  admin_flex input */
-.admin_flex input[type="submit"] {
-  margin: 20px 0;
+.admin_form input[type="submit"] {
+  margin: 20px auto;
 }
 /* fin de admin_flex input */
 
 /* debut admin_flex label */
-.admin_flex label {
-  margin: 3px;
+.admin_form label {
+  margin: 2px;
+  margin-bottom: 25px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  height: 100%;
+  text-align: center;
 }
-/* fin de admin_flex label */
+
+/* debut de la classe admin_form input */
+.admin_form input {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  height: 100%;
+  width: 200px;
+}
+/* fin */
+
+/* debut label */
+
+label {
+  color: rgb(172, 1, 1);
+  background-color: #171620;
+  margin-top: 25px;
+ 
+}
+/* fin */
 
 /* panier 'i' color white */
 i {
@@ -375,6 +419,7 @@ i {
 /* debut du panier */
 .panier {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 25px;
   width: 100%;
@@ -478,6 +523,7 @@ footer span {
     20deg
   ); /* Applique une rotation de 20 degrés au survol de la souris */
 }
+/* animation */
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -494,42 +540,5 @@ footer span {
   100% {
     transform: rotate(0deg);
   }
-}
-
-
-
-
-/*  debut de la classe imgchocolat img */
-.goutechocolat img {
-  width: 60px;
-  height: 50px;
-  transition: transform 0.3s ease;
-  /* Ajoute une transition de 0.3 secondes avec une fonction d'accélération */
-  animation: rotation 6s linear infinite;
-  border-radius: 40%;
 }
 /* fin */
-
-/* debut de la classe imgchocolat img:hover */
-.goutechocolat img:hover {
-  transform: rotate(
-    20deg
-  ); /* Applique une rotation de 20 degrés au survol de la souris */
-}
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(20deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(-20deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}

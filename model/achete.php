@@ -42,13 +42,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajouterPanier'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantityChange'])) {
-
+    extract($_POST);
+    // echo "SESSION : ";
+    // echo "<pre>";
+    // var_dump($_SESSION['cart']);
+    // echo "</pre>";
+    if (!array_key_exists('cart', $_SESSION)) {
+        $_SESSION['cart'] = [];
+    }
     $panier = $_SESSION['cart'];
+
+    $productsDejaDansPanier = false;
     //Recherchez l'article dans le panier
     foreach ($panier as $cle => $value) {
-        if ($id_gateau == $value["article"]["id_gateaux"]) {
+        if ($checkId == $value["article"]["id_gateaux"]) {
             // Mettez à jour la quantité de l'article existant
-            $panier[$cle]["quantite"] = $nouvelleQuantite;
+            $panier[$cle]["quantite"] = $updateQuantite;
             break;  // pour sortir de la boucle foreach
         }
     }
@@ -56,6 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantityChange'])) {
     // Mettez à jour la quantité dans la session
     $_SESSION['cart'] = $panier;
 
-    $response = array('success' => true, 'message' => 'Mise à jour de la quantité avec succès', 'newQuantite' => $nouvelleQuantite);
+
+    $nbTotal = 0;
+    foreach ($panier as $value) {
+        $nbTotal += $value["quantite"];
+    }
+    $_SESSION["nombre"] = $nbTotal;
+
+    $response = array('success' => true, 'message' => 'Mise à jour de la quantité avec succès', 'newQuantite' => $updateQuantite, 'nbTotal' => $nbTotal);
     echo json_encode($response);
 }

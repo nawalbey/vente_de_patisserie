@@ -11,14 +11,6 @@
     <div>
         <h2>vente de patisserie</h2>
     </div>
-
-      <div>
-        <a href="../views/gateaux.php"></a>
-        <div class="goutechocolat">
-            <img src="../asset/img/i184278-shutterstock-342885410.jpeg" alt="piece de chocolat">
-        </div>
-        
-    </div>
     <div
         class="navbar1">
         <!-- Si la clé id existe dans la Session, ça veut dire que l'utilisateur est connecté , alors , le bouton se déconnecter s'affichera, sinon , c'est qu'il n'est pas connecté , et donc inscription/login s'affichera -->
@@ -27,6 +19,9 @@
                     <h3>Bienvenue
                         <?= $_SESSION['prenom'] ?></h3>
                     <a href="../model/deconnexion.php?logout=true" class="btn color1">Se déconnecter</a>
+                    <?php if ($_SESSION['role'] == 'role_admin') { ?>
+                            <a class="btn color1 ms-2" href="../admin/admin.php">Admin</a>
+                    <?php } ?>
                 </div>
         <?php } else { ?>
                 <a href="../views/inscription.php" class="btn me-2 color1 ">inscription</a>
