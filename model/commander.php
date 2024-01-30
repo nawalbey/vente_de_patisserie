@@ -19,7 +19,7 @@ if (isset($_GET['commande']) && $_GET['commande'] == 'true' && isset($_SESSION['
     // Récupérer l'ID de la commande insérée
     $id_commande = $db->lastInsertId();
 
-    $request = $db->prepare('INSERT INTO detail (id_commande,id_gateau,quantite) VALUES (?,?,?)');
+    $request = $db->prepare('INSERT INTO detail_commande (id_commande,id_gateau,quantite) VALUES (?,?,?)');
     foreach ($gateaux as $tableau => $articlesQuantite) {
         $id = $articlesQuantite['article']['id_gateaux'];
         $quantite = $articlesQuantite['quantite'];

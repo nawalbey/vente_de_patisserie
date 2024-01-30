@@ -5,10 +5,6 @@ body {
 }
 /* fin du body */
 
-.body1 {
-  background-color: #171620;
-}
-
 .container-height {
   min-height: 100vh;
 }
@@ -32,16 +28,34 @@ body {
 h1 {
   text-align: center;
   letter-spacing: -2px;
-  text-shadow: 2px 2px 5px rgb(255, 254, 253);
+  color: #bf8a3d;
   font-family: Georgia, serif;
   text-decoration: underline;
   padding-top: 35px;
+  text-shadow: none;
+  animation: neon-blink 2s infinite alternate;
+}
+
+@keyframes neon-blink {
+  to {
+    text-shadow: 0 0 10px #cf6400, 0 0 20px #f5b002, 0 0 30px #2e0b0b;
+  }
 }
 /* fin du h1 */
 
+/* .class5 */
+.class5 {
+  background-image: url("../img/detail_gateau.jpg");
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.355);
+  background-size: cover;
+  width: 100%;
+  min-height: 1000px;
+}
+/* fin */
+
 /* debut de la class1 */
 .class1 {
-  background-image: url(../img/brownie-au-chocolat-filet-caramel-arrose-dessus_919652-2073.jpg);
+  background-image: url(../img/104-1048812_fond-d-cran-chocolat.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% 70%;
@@ -276,6 +290,7 @@ p {
 /* debut card */
 .card {
   position: relative;
+  border: 4px solid black;
 }
 /* fin */
 
@@ -305,6 +320,21 @@ p {
 .card-text {
   margin-top: 10px;
   text-align: center;
+  height: 100px;
+}
+/* fin */
+
+/* bouton des cartes */
+.btn-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* fin */
+
+/* classe btn-cards a */
+.btn-cards a {
+  width: 150px;
 }
 /* fin */
 
@@ -316,25 +346,21 @@ p {
   text-shadow: 2px 2px 5px rgb(255, 254, 253);
   font-family: Georgia, serif;
   text-decoration: underline;
-  padding-top: 25px;
-}
-/* fin */
-
-/* debut de ajout_admin_gateau form */
-.ajout_admin_gateau form {
-  margin: auto;
-  width: 600px;
+  padding: 100px 0;
 }
 /* fin */
 
 /* debut de ajout_admin_gateaux form */
 .ajout_admin_gateau form {
   width: 50%;
-  height: 1178px;
+  min-height: 100vh;
+  margin: auto;
   background-image: url(../img/Gateau-chocolat-zucchini-tinyjpg-1178px.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  /* box-shadow inset(l'interieur) pour que l'image soit sombre */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 /* fin */
 
@@ -346,15 +372,22 @@ p {
 }
 
 /* debut .admin_flex .admin_flex_envoyer */
-.admin_flex,
-.admin_flex_envoyer {
+.admin_flex {
   margin: 15px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
-  padding-bottom: 250px;
+  padding-bottom: 100px;
+}
+
+.admin_flex_envoyer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 /* fin */
 
@@ -392,12 +425,9 @@ p {
 /* fin */
 
 /* debut label */
-
 label {
-  color: rgb(172, 1, 1);
-  background-color: #171620;
+  color: #f59761;
   margin-top: 25px;
- 
 }
 /* fin */
 
@@ -409,10 +439,10 @@ i {
 
 /* debut de la class4 */
 .class4 {
-  background-image: url(../img/gateau-aux-trois-chocolats_208978-443.avif);
+  background-image: url(../img/8680b6b9d2199843b0f88adb8739c8a5.jpeg);
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50% 70%;
+  background-position: 50% 20%;
 }
 /* fin de la class4 */
 
@@ -514,6 +544,7 @@ footer span {
   /* Ajoute une transition de 0.3 secondes avec une fonction d'accélération */
   animation: rotation 6s linear infinite;
   border-radius: 40%;
+  border: 2px solid black;
 }
 /* fin */
 
@@ -540,5 +571,27 @@ footer span {
   100% {
     transform: rotate(0deg);
   }
+}
+/* fin */
+
+/* classe addtocartbtn pour expace les bouton entre ajouter au panier et voir details */
+.addToCartBtn {
+  margin: 5px;
+}
+/* fin */
+
+/* classe card_detail */
+.card_detail {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  align-items: center;
+}
+/* fin */
+
+/* classe card_height */
+.card-height {
+  height: 550px;
+  margin-bottom: 70px;
 }
 /* fin */
