@@ -21,16 +21,20 @@ $gateaux = gateaux_liste();
                     <p class="card-text">
                         <?= $gateau['description']; ?>
                     </p>
-                    <div class='btnAchat'>
-                        <form method="post" class="add-to-cart-form">
-                            <input type="hidden" name="id_gateaux" value="<?= $gateau['id_gateaux']; ?>">
-                            <input type="hidden" name="qte" value="1">
-                            <input type="hidden" name="nom_du_gateaux" value="<?= $gateau['nom_du_gateaux']; ?>">
-                            <input type="hidden" name="photo" value="<?= $gateau['photo']; ?>">
-                            <input type="hidden" name="prix" value="<?= $gateau['prix']; ?>">
-                            <input type="hidden" name="description" value="<?= $gateau['description']; ?>">
-                            <input type="submit" class="btn addToCartBtn" id="<?= $gateau['id_gateaux']; ?>">
-                        </form>
+                    <div class="btn-cards">
+                        <div class='btnAchat'>
+                            <form method="post" class="add-to-cart-form">
+                                <input type="hidden" name="id_gateaux" value="<?= $gateau['id_gateaux']; ?>">
+                                <input type="hidden" name="qte" value="1">
+                                <input type="hidden" name="nom_du_gateaux" value="<?= $gateau['nom_du_gateaux']; ?>">
+                                <input type="hidden" name="photo" value="<?= $gateau['photo']; ?>">
+                                <input type="hidden" name="prix" value="<?= $gateau['prix']; ?>">
+                                <input type="hidden" name="description" value="<?= $gateau['description']; ?>">
+                                <input type="submit" class="btn addToCartBtn" id="<?= $gateau['id_gateaux']; ?>" value="ajouter au panier">
+                            </form>
+                        </div>
+                        <!-- On envoit l'id du gateau dans l'url en paramètre pour qu'il soit récupéré par notre DetailsController.php -->
+                        <a href="../model/DetailsController.php?id_gateau=<?= $gateau['id_gateaux'] ?>" class='btn'>Voir les details</a>
                     </div>
                 </div>
             </div>

@@ -63,7 +63,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (response) {
           $("#quantite-gateaux" + gateauxId).text(response.newQuantite);
-          quantiteSpan+gateauxId = response.newQuantite;
+          // quantiteSpan+gateauxId = response.newQuantite;
           // Mettre à jour l'affichage avec la nouvelle quantité
           $("#nbArticles").text(response.nbTotal);
         },
