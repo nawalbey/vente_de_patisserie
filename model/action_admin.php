@@ -34,7 +34,7 @@ function gateaux_liste() {
 
     $request = $db->prepare('SELECT * FROM list_gateaux');
     try {
-        $request->execute(array());
+        $request->execute();
         $gateaux = $request->fetchAll();
         return $gateaux;
     } catch (PDOException $error) {
