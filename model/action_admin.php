@@ -1,7 +1,7 @@
 <?php
 require_once('../inc/database.php');
 
-if(isset($_POST['ajout_gateau'])) {
+if (isset($_POST['ajout_gateau'])) {
     $n_g = htmlspecialchars($_POST['n_gateau']);
     $d_g = htmlspecialchars($_POST['d_gateau']);
     $p_g = htmlspecialchars($_POST['p_gateau']);
@@ -11,7 +11,7 @@ if(isset($_POST['ajout_gateau'])) {
 
     $tmp_name = $_FILES['i_gateau']['tmp_name'];
 
-    $destination = $_SERVER['DOCUMENT_ROOT']."/vente_de_patisserie/asset/img/".$imgName;
+    $destination = $_SERVER['DOCUMENT_ROOT'] . "/vente_de_patisserie/asset/img/" . $imgName;
 
     move_uploaded_file($tmp_name, $destination);
     // Connexion base de données : 
@@ -21,6 +21,7 @@ if(isset($_POST['ajout_gateau'])) {
 
     try { // on essaye d'executer la requête
         $request->execute(array($n_g, $d_g, $p_g, $imgName));
+        $_SESSION["confirme-ajout"] = "le gateau a bien été ajouté";
         header('Location: http://localhost/vente_de_patisserie/admin/ajout_gateau.php');
     } catch (PDOException $error) {
         echo $error->getMessage();
@@ -29,7 +30,8 @@ if(isset($_POST['ajout_gateau'])) {
 
 // Récupération des gateaux
 
-function gateaux_liste() {
+function gateaux_liste()
+{
     $db = dbConnexion();
 
     $request = $db->prepare('SELECT * FROM list_gateaux');

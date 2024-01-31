@@ -1,5 +1,7 @@
 <?php require_once('../inc/header.php');
-
+if (!isset($_SESSION['id'])) {
+    header("Location: http://localhost/vente_de_patisserie/views/login.php");
+}
 ?>
 
 <body class="body1">
@@ -30,6 +32,12 @@
             <div class="admin_flex_envoyer">
                 <input type="submit" name="ajout_gateau" value="Envoyer">
             </div>
+            <?php if (isset($_SESSION['confirme-ajout'])) { ?>
+                    <div class="alert alert-success">
+                        <p><?= $_SESSION['confirme-ajout']; ?></p>
+                    </div>
+            <?php }
+            unset($_SESSION['confirme-ajout']); ?>
         </form>
     </div>
 </body>
